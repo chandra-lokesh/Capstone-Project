@@ -1,0 +1,41 @@
+Project Notes:
+
+sir's repo : https://github.com/ramanujds/online-shopping-app
+
+chatuml for diagrams
+
+Reference: Ticker Tape
+Public API's: 
+
+Dashboard:
+
+1. scrolling stock prices
+2. search filters
+3. news
+4. notification alerts
+5. watchlist
+6. Authentication & Authorization
+7. 
+
+
+Alpha Vantage API : O8SLYBWV4GVWR2BR
+
+alpha vantage intraday api's:
+	
+https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=RELIANCE.BSE&interval=2min&apikey=O8SLYBWV4GVWR2BR
+
+
+WebClient tut: https://youtu.be/RHZgllzbjVQ?si=OdEVe8LzhaQ1JTn2
+
+test api's: 
+https://catfact.ninja/fact
+https://v2.jokeapi.dev/joke/Programming
+
+
+sendgrid code: MUUX462DM41CZZA5DKEGHFVN
+
+
+
+
+PPT link: https://gamma.app/docs/Stock-Bridge-Achieve-Your-Financial-Goals-8oje5ko3axmuoy2?follow_on_start=true&following_id=oh9s53s0a7qya3i&mode=doc
+
