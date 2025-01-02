@@ -1,0 +1,47 @@
+<div class="portfolio-card">
+    <div class="card-header">
+      <h3>Portfolio Overview</h3>
+    </div>
+    <div class="card-body">
+      
+      <div class="balance-section">
+        <p class="total-balance">{{ totalBalance | currency: 'USD' }}</p>
+        <p class="balance-label">Total Balance</p>
+      </div>
+  
+      
+      <div class="container">
+        <div class="invested-section">
+          <p class="invested-amount" style="margin-bottom: 0;">{{ investmentAmount | currency: 'USD' }}</p>
+          <p class="amount-label">Invested Amount</p>
+        </div>
+    
+        
+        <div class="profit-loss-section">
+          <p
+            class="profit-loss"
+            [class.profit]="profitLoss > 0"
+            [class.loss]="profitLoss < 0">
+            {{ profitLoss | currency: 'USD' }}
+          </p>
+          <p class="amount-label">Profits</p>
+        </div>
+      </div>
+  
+      
+      <div *ngIf="!showAddBudgetModal" class="add-budget-section">
+        <button (click)="showAddBudgetModal = true">Add Budget</button>
+      </div>
+      
+      <div *ngIf="showAddBudgetModal" class="modal-overlay">
+        <div class="modal-content">
+          <label for="budgetAmount">Enter Budget Amount</label>
+          <input type="number" [(ngModel)]="budgetAmount" placeholder="Enter budget amount" />
+          <button class="add-button" (click)="handleBudgetSubmission(budgetAmount)">Add</button>
+          <button class="cancel-button" (click)="closeAddBudgetModal()">Cancel</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  

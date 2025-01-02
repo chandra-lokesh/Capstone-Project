@@ -1,0 +1,49 @@
+
+  <div class="card">
+    <div class="card-header">
+      <img [src]="stockDetails?.image" alt="Company Logo" class="company-logo" />
+      <div class="company-info">
+        <h4>{{ stockDetails?.companyName }}</h4>
+        <p class="symbol">{{ stockDetails?.symbol }}</p>
+      </div>
+    </div>
+  
+    <div class="card-body">
+      <div class="stock-price">
+        <h2 class="price">{{ stockDetails?.price | number: '1.2-2' }}</h2>
+        <span class="currency">{{ stockDetails?.currency }}</span>
+        <span class="changepercentage" [class.positive]="stockDetails?.changes > 0" [class.negative]="stockDetails?.changes < 0">
+          {{ stockDetails?.changes | number: '1.2-2' }}%
+        </span>
+      </div>
+  
+      <div class="buy-section">
+        <button class="buy-btn" (click)="openBuyPopup()">Buy</button>
+      </div>
+
+      <div class="news-feed">
+        <h5 class="news-heading">Latest News</h5>
+        <div class="news-list">
+          <div *ngFor="let news of newsFeed" class="news-item">
+            <a [href]="news.url" target="_blank" class="news-link">{{ news.title }}</a>
+            <p class="news-description">{{ news.description }}</p>
+            <hr>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+  
+    <div class="modal" *ngIf="isModalOpen">
+      <div class="modal-content">
+        <h2>Enter Quantity</h2>
+        <input type="number" [(ngModel)]="quantity" min="1" max="100" step="1" class="modal-input"/>
+        <div class="modal-actions">
+          <button class="cancel-btn" (click)="closeModal()">Cancel</button>
+          <button class="confirm-btn" (click)="confirmPurchase()">Confirm</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  

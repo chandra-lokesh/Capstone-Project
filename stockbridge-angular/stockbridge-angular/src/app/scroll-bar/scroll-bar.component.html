@@ -1,0 +1,20 @@
+  <div class="stock-ticker-container">
+    <marquee behavior="scroll" direction="left">
+      <div class="stock-item" *ngFor="let stock of stocks">
+        <span class="stock-symbol">{{ stock.symbol }}</span>
+        <span class="stock-price">{{ stock.price }}</span>
+        <span
+        class="stock-change"
+        [ngClass]="{'positive': stock.change >= 0, 'negative': stock.change < 0}"
+      >
+        <span *ngIf="stock.change >= 0" class="arrow up">▲</span> <!-- Up Arrow -->
+        <span *ngIf="stock.change < 0" class="arrow down">▼</span> <!-- Down Arrow -->
+        {{ stock.changesPercentage.toFixed(2) }}%
+      </span>
+      </div>
+    </marquee>
+  </div>
+  
+  
+  
+  

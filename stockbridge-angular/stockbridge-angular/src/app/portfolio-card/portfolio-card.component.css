@@ -1,0 +1,250 @@
+
+.portfolio-card {
+    width: 400px;
+    height: 400px;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    
+    color: #333;
+    text-align: center;
+    margin: 2rem;
+}
+  
+ 
+
+  .container{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+  
+  .total-balance {
+    font-size: 2.2rem;
+    font-weight: bold;
+    color: #003285;
+    margin: 0;
+  }
+  
+  .balance-label {
+    font-size: 0.9rem;
+    color: #888;
+    margin-top: 4px;
+  }
+  
+ 
+  .invested-section {
+    margin-bottom: 16px;
+  }
+  
+  .amount-label {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 4px;
+  }
+
+  label{
+    font-size: 1rem;
+    font-weight: 500;
+  }
+  
+  .invested-amount {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  
+  .profit-loss-section {
+    margin-bottom: 16px;
+  }
+  
+  .profit-loss {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin: 0;
+  }
+  
+  .profit-loss.profit {
+    color: #28a745;
+  }
+  
+  .profit-loss.loss {
+    color: #dc3545; 
+  }
+  
+  /* Action Buttons */
+  .card-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 16px;
+  }
+  
+  .cta {
+    padding: 10px 16px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .cta.view-transactions {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  .cta.view-transactions:hover {
+    background-color: #0056b3;
+  }
+  
+  .cta.add-amount {
+    background-color: #ffc107;
+    color: #333;
+  }
+  
+  .cta.add-amount:hover {
+    background-color: #e0a800;
+  }
+  
+  .cta:hover {
+    transform: scale(1.05);
+  }
+
+  h3{
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 700;
+    margin: 1rem;
+    text-transform: uppercase;
+    letter-spacing: .2rem;
+    color: rgb(167, 167, 167);
+  }
+
+  .add-budget-section button{
+    width: 100%; 
+    padding: 8px;
+    background-color: #003285;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 500;
+    border-radius: 10px;
+    margin-top: 1rem;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  } 
+
+  .add-budget-section button:hover{
+    background-color: #013c9b;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+
+
+  .modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; 
+  }
+  
+  .modal-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 300px;
+    text-align: center;
+    animation: fadeIn 0.3s ease-in-out;
+  }
+  
+  .modal-content label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+    font-size: 16px;
+  }
+  
+  .modal-content input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 14px;
+  }
+  
+  .button-group {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .add-button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    font-weight: 700;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  
+  .add-button:hover {
+    background-color: #218838;
+  }
+  
+  .cancel-button {
+    background-color: rgb(218, 218, 218);
+    color: black;
+    font-weight: 700;
+    margin-top: .6rem;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  
+  .cancel-button:hover {
+    background-color: rgb(168, 168, 168);
+  }
+  
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .portfolio-card {
+      padding: 16px;
+    }
+  
+    .card-actions {
+      flex-direction: column;
+      gap: 10px;
+    }
+  
+    .cta {
+      width: 100%;
+    }
+  }
+  

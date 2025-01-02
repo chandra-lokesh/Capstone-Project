@@ -1,0 +1,48 @@
+.add-budget-page {
+  max-width: 400px;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.add-budget-page h3 {
+  text-align: center;
+}
+
+.add-budget-page form {
+  display: flex;
+  flex-direction: column;
+}
+
+.add-budget-page label {
+  margin-bottom: 8px;
+}
+
+.add-budget-page input {
+  padding: 8px;
+  margin-bottom: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.add-budget-page button {
+  padding: 10px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.add-budget-page button:hover {
+  background-color: #45a049;
+}
+
+.success-message {
+  margin-top: 16px;
+  color: green;
+  text-align: center;
+  font-weight: bold;
+}

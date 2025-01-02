@@ -1,0 +1,23 @@
+  <div class="bar-chart-container" *ngIf="sentimentData">
+    <h4>Sentiment Scores for {{ symbol }}</h4>
+    <div class="sentiment-container">
+      <div class="bar-container" *ngFor="let score of getScores()">
+        <span class="bar-recommendation">{{ score.recommendation }}</span>
+        <div
+          class="bar"
+          [style.height]="score.value * 10 + 'px'"
+          [style.background-color]="getBarColor(score.recommendation)"
+        ></div>
+        <span class="bar-label">{{ score.key }}</span>
+      </div>
+    </div>
+  </div>
+  
+  <div *ngIf="!sentimentData">
+    <p>Loading sentiment data...</p>
+  </div>
+  
+  
+  
+  
+  

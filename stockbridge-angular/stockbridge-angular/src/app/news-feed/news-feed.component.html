@@ -1,0 +1,9 @@
+<div class="container">
+    <h3>Latest Stock Updates</h3>
+    <div class="news-item" *ngFor="let news of newsList">
+      <h5>{{ news.title }}</h5>
+      <p>{{ news.summary }}</p>
+      <a href="{{news.url}}" class="btn-read">Read Article</a>
+    </div>
+</div>
+  

@@ -1,0 +1,51 @@
+<div class="stock-table">
+
+  <div class="table-header">
+    <div class="column">Logo</div>
+    <div class="column">Company Name</div>
+    <div class="column">Symbol</div>
+    <div class="column">Purchased Price</div>
+    <div class="column">Quantity</div>
+    <div class="column">Current Price</div>
+    <div class="column">Profit</div>
+    <div class="column">Actions</div> 
+  </div>
+
+  <div class="table-row" *ngFor="let stock of stocks">
+    <div class="column">
+      <img 
+          [src]="stock.logo || 'https://www.accountancyage.com/wp-content/themes/accountancy-age/img/company-placeholder.png'" 
+          alt="Company Logo" 
+          class="company-logo"
+        />
+    </div>
+    <div class="column" id="stock-name" (click)="navigateToStockDetails(stock.symbol)">{{ stock.name }}</div>
+    <div class="column" id="stock-symbol">{{ stock.symbol }}</div>
+    <div class="column" id="stock-price">${{ stock.purchasedPrice }}</div>
+    <div class="column" id="stock-quantity">{{ stock.quantity }}</div>
+    <div class="column" id="stock-currentprice">${{ stock.currentPrice }}</div>
+    <div
+      class="column" id="stock-profit"
+      [class.profit]="stock.profit > 0"
+      [class.loss]="stock.profit < 0"
+    >
+      ${{ stock.profit }}
+    </div>
+    <div class="column">
+      <button class="btn btn-danger" (click)="openSellPopup(stock)">Sell</button>
+    </div>
+  </div>
+</div>
+
+<div class="popup-overlay" *ngIf="isPopupVisible" (click)="closePopup()">
+  <div class="popup-content" (click)="$event.stopPropagation()">
+    <h3>Confirm Sell</h3>
+    <p>Are you sure you want to sell <strong>{{ selectedStockQuantity }}</strong> stocks of {{ selectedStockSymbol }}?</p>
+
+    <label for="quantity">Quantity to sell</label>
+    <input type="number" id="quantity" [(ngModel)]="selectedStockQuantity" [max]="selectedStockQuantity" min="1" />
+
+    <button (click)="confirmSell()">Confirm</button>
+    <button (click)="closePopup()">Cancel</button>
+  </div>
+</div>

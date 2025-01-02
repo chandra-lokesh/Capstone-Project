@@ -1,0 +1,39 @@
+   <div class="favourites-container">
+    <div class="scrollable-section">
+      <h4>Watch List</h4>
+      <div class="card" *ngFor="let stock of stockDetails">
+        <div (click)="navigateToStockDetails(stock.symbol)" >
+
+        <div class="logo">
+          <img 
+          [src]="stock.logo || 'https://www.accountancyage.com/wp-content/themes/accountancy-age/img/company-placeholder.png'" 
+          alt="Company Logo" 
+          class="company-logo"
+        />
+        </div>
+
+        <div class="maininfo">
+          <div class="companyname">
+            <h5 class="company-name">{{ stock.name }}</h5>
+          </div>
+          <div class="prices">
+            <div class="stockprice">${{ stock.price }}</div>
+            <div 
+              class="changepercentage" 
+              [class.positive]="stock.changes > 0" 
+              [class.negative]="stock.changes < 0">
+              {{ stock.changes }} ({{ stock.changesPercentage }}%)
+            </div>
+          </div>
+        </div>
+      </div>
+  
+    
+        <div class="remove-button-section">
+          <button class="remove-button" (click)="removeFavouriteStock(stock.symbol)">Remove</button>
+        </div>
+      </div>
+    
+    </div>
+  </div>
+  

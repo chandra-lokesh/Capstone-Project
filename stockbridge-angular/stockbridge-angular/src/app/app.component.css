@@ -1,0 +1,43 @@
+.stock-table {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 20px auto;
+    border-collapse: collapse;
+  }
+  
+  .table-header, .table-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .table-header {
+    font-weight: bold;
+    background-color: #f4f4f4;
+  }
+  
+  .column {
+    flex: 1;
+    text-align: center;
+    padding: 5px 10px;
+  }
+  
+  .logo {
+    max-width: 50px;
+    max-height: 50px;
+    object-fit: cover;
+    cursor: pointer;
+  }
+  
+  .profit {
+    color: green;
+  }
+  
+  .loss {
+    color: red;
+  }
+  

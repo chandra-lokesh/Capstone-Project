@@ -1,0 +1,51 @@
+.navbar-brand img {
+    border-radius: 50%;
+  }
+  
+  .nav-item .nav-link {
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+  }
+  
+  .navbar .d-flex img {
+    /* border: 2px solid #ccc; */
+  }
+
+  .navbar-brand span{
+    font-family: "Montserrat", serif;
+    font-size: 18px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    color: #003285;
+  }
+
+  .navbar {
+    background-color: #003285;
+    padding: 1rem;
+  }
+  
+  .navbar .navbar-nav .nav-item .nav-link {
+    padding: 0.5rem 1rem;
+  }
+  
+  .navbar .d-flex button {
+    margin-left: 10px;
+  }
+
+  .navbar {
+    background-color: #f8f9fa;
+  }
+  
+  .navbar .dropdown-toggle {
+    padding: 5px;
+  }
+  
+  .navbar .dropdown-menu {
+    min-width: 150px;
+  }
+  
+  .navbar .dropdown-item {
+    padding: 10px;
+  }
+  

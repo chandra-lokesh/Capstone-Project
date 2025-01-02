@@ -1,0 +1,59 @@
+.container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+button {
+    margin: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  canvas {
+    margin-top: 32px;
+  }
+
+
+  
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.toggle-buttons {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.toggle-buttons button {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  margin: 0 5px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #fff;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+
+.toggle-buttons button.active {
+  background-color: #007bff;
+  color: #fff;
+  border-color: #007bff;
+}
+
+.toggle-buttons button:hover {
+  background-color: #f0f0f0;
+}
+
+canvas {
+  margin-top: 32px;
+}

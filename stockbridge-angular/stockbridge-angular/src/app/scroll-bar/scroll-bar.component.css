@@ -1,0 +1,71 @@
+
+  
+  .stock-ticker-container {
+    width: 100%;
+    overflow: hidden;
+    background-color: white;
+    border-bottom: 1px solid #ccc;
+    position: relative;
+    margin-top: 10px;
+  }
+  
+  .stock-ticker {
+    display: flex;
+    animation: scroll 10s linear infinite; 
+    white-space: nowrap;
+  }
+  
+  .stock-item {
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    padding: 0 20px;
+    border-right: 1px solid #ccc;
+    white-space: nowrap;
+  }
+  
+  .stock-symbol {
+    font-weight: bold;
+    margin-right: 10px;
+  }
+  
+  .stock-price,
+  .stock-change {
+    margin-right: 10px;
+  }
+  
+  .arrow {
+    font-size: 1em;
+    font-weight: 700;
+    margin-right: 5px;
+  }
+  
+  .arrow.up {
+    color: green;
+    
+  }
+  
+  .arrow.down {
+    color: red;
+  }
+  
+  .stock-change.positive {
+    color: green;
+  }
+  
+  .stock-change.negative {
+    color: red;
+  }
+  
+  
+  @keyframes scroll {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+  
+  
+  

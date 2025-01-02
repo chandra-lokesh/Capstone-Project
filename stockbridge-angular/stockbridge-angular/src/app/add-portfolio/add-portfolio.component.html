@@ -1,0 +1,18 @@
+<div class="container mt-4">
+  <h3>Create Portfolio</h3>
+  <form (ngSubmit)="createPortfolio()">
+    <div class="mb-3">
+      <label for="budget" class="form-label">Initial Budget</label>
+      <input
+        type="number"
+        id="budget"
+        class="form-control"
+        [(ngModel)]="budget"
+        name="budget"
+        required
+        min="0"
+      />
+    </div>
+    <button type="submit" class="btn btn-primary mt-3">Create Portfolio</button>
+  </form>
+</div>

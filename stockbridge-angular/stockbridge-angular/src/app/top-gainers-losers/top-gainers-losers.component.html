@@ -1,0 +1,57 @@
+
+ <div class="container">
+
+  <div class="toggle-buttons">
+    <button 
+      class="toggle-btn" 
+      [class.active]="isTopGainersSelected" 
+      (click)="selectTopGainers()">
+      Top Gainers
+    </button>
+    <button 
+      class="toggle-btn" 
+      [class.active]="!isTopGainersSelected" 
+      (click)="selectTopLosers()">
+      Top Losers
+    </button>
+  </div>
+
+
+  <ng-container *ngIf="isLoading; else stockList">
+    <div>Loading...</div>
+  </ng-container>
+
+  <ng-template #stockList>
+  
+    <div *ngFor="let stock of selectedStocks" >
+      <div (click)="navigateToStockDetails(stock.symbol)" class="card" >
+      <div class="logo">
+        
+        <img 
+          [src]="stock.logo || 'https://www.accountancyage.com/wp-content/themes/accountancy-age/img/company-placeholder.png'" 
+          alt="Company Logo" 
+          class="company-logo"
+        />
+
+        
+      </div>
+      <div class="maininfo">
+        <div class="companyname">
+          <h5 class="company-name">{{ stock.name }}</h5>
+        </div>
+        <div class="prices">
+          <div class="stockprice">${{ stock.price }}</div>
+          <div class="changepercentage" [class.positive]="stock.changesPercentage > 0" [class.negative]="stock.changesPercentage < 0">
+            {{ stock.changesPercentage }}%
+          </div>
+        </div>
+      </div>
+      <div class="favouritebutton">
+        <button class="favorite-button" (click)="addToFavorites(stock.symbol, $event)">❤️</button>
+      </div>
+    </div>
+    </div>
+  </ng-template>
+
+  <div *ngIf="errorMessage">{{ errorMessage }}</div>
+</div>

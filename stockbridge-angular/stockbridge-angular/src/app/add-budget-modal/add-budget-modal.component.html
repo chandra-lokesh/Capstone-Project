@@ -1,0 +1,18 @@
+<div class="add-budget-page">
+  <h3>Add Budget</h3>
+  <form (submit)="submitBudget()">
+    <label for="budgetAmount">Enter Budget Amount:</label>
+    <input
+      id="budgetAmount"
+      type="number"
+      [(ngModel)]="budgetAmount"
+      name="budgetAmount"
+      required
+    />
+    <button type="submit">Submit</button>
+  </form>
+
+  <div *ngIf="isSuccess" class="success-message">
+    Budget added successfully!
+  </div>
+</div>

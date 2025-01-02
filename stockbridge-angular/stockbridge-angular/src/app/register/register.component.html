@@ -1,0 +1,113 @@
+<div class="container">
+  
+<div class="background">
+  <img src="/assets/Axia.png" alt="Image">
+</div>
+
+<div class="register-container">
+    <h2>Register</h2>
+    <form (ngSubmit)="onSubmit()" #registerForm="ngForm">
+      <div class="form-group">
+        <label for="firstname">First Name</label>
+        <input
+          type="text"
+          id="firstname"
+          name="firstname"
+          class="form-control"
+          [(ngModel)]="firstname"
+          required
+        />
+        <div *ngIf="registerForm.submitted && !registerForm.controls.firstname?.valid" class="error">
+          First Name is required
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="lastname">Last Name</label>
+        <input
+          type="text"
+          id="lastname"
+          name="lastname"
+          class="form-control"
+          [(ngModel)]="lastname"
+          required
+        />
+        <div *ngIf="registerForm.submitted && !registerForm.controls.lastname?.valid" class="error">
+          Last Name is required
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <label for="username">Username</label>
+        <input
+          type="text"
+          id="username"
+          name="username"
+          class="form-control"
+          [(ngModel)]="username"
+          required
+        />
+        <div *ngIf="registerForm.submitted && !registerForm.controls.username?.valid" class="error">
+          Username is required
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          class="form-control"
+          [(ngModel)]="email"
+          required
+          email
+        />
+        <div *ngIf="registerForm.submitted && !registerForm.controls.email?.valid" class="error">
+          Valid Email is required
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input
+          type="password"
+          id="password"
+          name="password"
+          class="form-control"
+          [(ngModel)]="password"
+          required
+          minlength="8"
+        />
+        <div *ngIf="registerForm.submitted && !registerForm.controls.password?.valid" class="error">
+          Password must be at least 8 characters
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <label for="contact">Contact Number</label>
+        <input
+          type="tel"
+          id="contact"
+          name="contact"
+          class="form-control"
+          [(ngModel)]="contact"
+          required
+          pattern="^[0-9]{10}$"
+        />
+        <div *ngIf="registerForm.submitted && !registerForm.controls.contact?.valid" class="error">
+          Contact Number must be a 10-digit number
+        </div>
+      </div>
+  
+      <button type="submit" class="btn btn-primary" [disabled]="!registerForm.valid">Register</button>
+      <br>
+
+      <p>
+        Already have an account? <a routerLink="/login">Login here</a>
+      </p>
+    </form>
+  </div>
+  
+
+</div>

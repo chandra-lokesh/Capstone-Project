@@ -1,0 +1,11 @@
+<app-nav-bar></app-nav-bar>
+
+<div class="stock-details-container">
+  <div class="chart-container">
+    <app-chart [symbol]="symbol"></app-chart>
+    <!-- <app-sentiment [symbol]="symbol"></app-sentiment> -->
+  </div>
+  <app-stock-card [symbol]="symbol"></app-stock-card>
+</div>
+
+<app-footer></app-footer>

@@ -1,0 +1,44 @@
+<div class="container">
+  <div
+    *ngFor="let stock of stocks"
+    class="card"
+    (click)="navigateToStockDetails(stock.symbol)"
+  >
+    
+    <div class="logo">
+      <img
+        [src]="
+          stock.logo ||
+          'https://www.accountancyage.com/wp-content/themes/accountancy-age/img/company-placeholder.png'
+        "
+        alt="Company Logo"
+        class="company-logo"
+      />
+    </div>
+
+    <div class="maininfo">
+      <div class="companyname">
+        <h5 class="company-name">{{ stock.name }}</h5>
+      </div>
+      <div class="prices">
+        <div class="stockprice">${{ stock.price }}</div>
+        <div
+          class="changepercentage"
+          [class.positive]="stock.changesPercentage > 0"
+          [class.negative]="stock.changesPercentage < 0"
+        >
+          {{ stock.changesPercentage.toFixed(2) }}%
+        </div>
+      </div>
+    </div>
+
+    <div class="favouritebutton">
+      <button
+        class="favorite-button"
+        (click)="addToFavorites(stock.symbol, $event)"
+      >
+        ❤️
+      </button>
+    </div>
+  </div>
+</div>

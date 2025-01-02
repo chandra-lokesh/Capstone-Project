@@ -1,0 +1,46 @@
+  <div class="search-container">
+    <input
+      type="text"
+      placeholder="Search for a stock"
+      [formControl]="searchControl"
+      class="search-input"
+    />
+    <button (click)="fetchAllStocks()" class="search-button">Search</button>
+  </div>
+  
+  <div *ngIf="loading" class="loading-spinner">
+    <p>Loading...</p>
+  </div>
+  
+  <div *ngIf="!loading && allStocks.length > 0" class="container">
+    <div *ngFor="let stock of allStocks" class="card" (click)="navigateToStockDetails(stock.symbol)">
+      <div class="logo">
+        <img 
+          [src]="stock.logo || 'https://www.accountancyage.com/wp-content/themes/accountancy-age/img/company-placeholder.png'" 
+          alt="Company Logo" 
+          class="company-logo"
+        />
+      </div>
+ 
+      <div class="maininfo">
+        <div class="companyname">
+          <h5 class="company-name">{{ stock.name }}</h5>
+          <small style="color: gray; font-weight: bold;">{{ stock.symbol }}</small>
+        </div>
+        <div class="prices">
+          <div class="stockprice">${{ stock.price }}</div>
+          <div 
+            class="changepercentage" 
+            [class.positive]="stock.changePercentage.startsWith('+')" 
+            [class.negative]="stock.changePercentage.startsWith('-')">
+            {{ stock.changePercentage }}
+          </div>
+        </div>
+      </div>
+
+      <div class="favouritebutton">
+        <button class="favorite-button" (click)="addToFavorites(stock.symbol, $event)">❤️</button>
+      </div>
+    </div>
+  </div>
+  
