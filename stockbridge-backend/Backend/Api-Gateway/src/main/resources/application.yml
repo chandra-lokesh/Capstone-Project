@@ -1,0 +1,51 @@
+server:
+  port: 9999
+spring:
+  application:
+    name: api-gateway-server
+
+  cloud:
+    gateway:
+      globalcors:
+        cors-configurations:
+          '[/**]':
+            allowedOrigins: "http://localhost:4200/"
+            allowedMethods: '*'
+            allowedHeaders: '*'
+      routes:
+        - id: portfolio
+          uri:
+           lb://portfolio
+          predicates:
+            - Path=/api/v1/portfolio/**
+          filters:
+            - name: AuthenticationFilter
+        - id: user
+          uri:
+            lb://portfolio
+          predicates:
+            - Path=/api/v1/user/**
+          filters:
+            - name: AuthenticationFilter
+        - id: transaction
+          uri:
+            lb://portfolio
+          predicates:
+            - Path=/api/v1/transaction/**
+          filters:
+            - name: AuthenticationFilter
+        - id: auth
+          uri:
+            lb://UserAuth
+          predicates:
+            - Path=/api/**
+
+
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+  instance:
+    prefer-ip-address: true
+
