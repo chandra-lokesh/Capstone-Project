@@ -2,7 +2,10 @@ import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 
 import { HttpClient } from '@angular/common/http';
 
-import { Chart, registerables } from 'chart.js/auto';
+import { Chart, registerables } from 'chart.js';
+
+Chart.register(...registerables)
+
 
 @Component({
   selector: 'app-chart',
